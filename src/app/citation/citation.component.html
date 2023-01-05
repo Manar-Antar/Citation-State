@@ -1,0 +1,32 @@
+<div class="row mx-auto d-flex justify-content-center text-center mt-5">
+    <div class="col-md-8 mt-3">
+        <h2 class="text-center">
+            Citation ID
+        </h2>
+        <div class="form ">
+            <form (ngSubmit)="clearInput()"class="d-flex align-items-baseline mx-auto justify-content-center">
+            <input type="text"#inputId name="" id="citationIdInput" class='citationId w-50 form-control mt-3 mx-1'>
+            <button class="btn btn-warning text-white btn-md" (click)="getInput()">Add</button>
+        </form>
+        </div>
+        <div class="citationTable mt-5"*ngIf="id.length>0" >
+            <table class="table table-bordered text-center rounded">
+                <thead class="">
+                    <th class="p-2"> Id</th>
+                    <th class="p-2"> State</th>
+                </thead>
+                <tbody class="tableBody cursor-pointer">
+                    <tr *ngFor="let id of id">
+                        <td class="p-2">{{id}}</td>
+                        <td class="p-2"> {{state}} </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <button class="btn btn-lg btn-success px-4 py-2 mt-3" (click)="getData(id)">Run</button>
+
+        </div>
+
+
+    </div>
+</div>

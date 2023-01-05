@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "state": "run"
+    },
+    {
+        "id": 2,
+        "state": "off"
+    },
+    {
+        "id": 3,
+        "state": "run"
+    },
+    {
+        "id": 4,
+        "state": "run"
+    },
+    {
+        "id": 5,
+        "state": "off"
+    },
+    {
+        "id": 6,
+        "state": "off"
+    }
+]
