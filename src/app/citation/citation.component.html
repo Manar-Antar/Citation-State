@@ -4,26 +4,29 @@
             Citation ID
         </h2>
         <div class="form ">
-            <form (ngSubmit)="clearInput()"class="d-flex align-items-baseline mx-auto justify-content-center">
-            <input type="text"#inputId name="" id="citationIdInput" class='citationId w-50 form-control mt-3 mx-1'>
-            <button class="btn btn-warning text-white btn-md" (click)="getInput()">Add</button>
-        </form>
+            <form (ngSubmit)="clearInput()" class="d-flex align-items-baseline mx-auto justify-content-center">
+                <input type="text" #inputId name="" id="citationIdInput" class='citationId w-50 form-control mt-3 mx-1'>
+                <button class="btn btn-warning text-white btn-md" (click)="getInput()"(click)="clearInput()">Add</button>
+            </form>
         </div>
-        <div class="citationTable mt-5"*ngIf="id.length>0" >
+
+        <div class="citationTable mt-5" *ngIf="id.length>0">
             <table class="table table-bordered text-center rounded">
                 <thead class="">
                     <th class="p-2"> Id</th>
                     <th class="p-2"> State</th>
                 </thead>
                 <tbody class="tableBody cursor-pointer">
-                    <tr *ngFor="let id of id">
+                    
+                    <tr *ngFor="let id of id;let i=index">
                         <td class="p-2">{{id}}</td>
-                        <td class="p-2"> {{state}} </td>
+                        <td class="p-2" *ngIf="displayState">{{state[i]}}</td>
                     </tr>
 
                 </tbody>
             </table>
-            <button class="btn btn-lg btn-success px-4 py-2 mt-3" (click)="getData(id)">Run</button>
+
+            <button class="btn btn-lg btn-success px-4 py-2 mt-3" (click)="getData()">Run</button>
 
         </div>
 
