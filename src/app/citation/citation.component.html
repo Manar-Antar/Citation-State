@@ -1,12 +1,12 @@
 <div class="row mx-auto d-flex justify-content-center text-center mt-5">
-    <div class="col-md-8 mt-3">
-        <h2 class="text-center">
+    <div class="col-md-10 mt-3">
+        <h1 class="text-center">
             Citation ID
-        </h2>
+        </h1>
         <div class="form ">
             <form (ngSubmit)="clearInput()" class="d-flex align-items-baseline mx-auto justify-content-center">
-                <input type="text" #inputId name="" id="citationIdInput" class='citationId w-50 form-control mt-3 mx-1'>
-                <button class="btn btn-warning text-white btn-md" (click)="getInput()"(click)="clearInput()">Add</button>
+                <input type="text" #inputId name="" id="citationIdInput" class='citationId w-50 form-control mt-3 mx-2'>
+                <button class="btn btn-warning text-white" (click)="getInput()"(click)="clearInput()"><i class="fa-solid fa-plus fs-5"></i></button>
             </form>
         </div>
 
@@ -20,13 +20,13 @@
                     
                     <tr *ngFor="let id of id;let i=index">
                         <td class="p-2">{{id}}</td>
-                        <td class="p-2" *ngIf="displayState">{{state[i]}}</td>
+                        <td class="p-2" *ngIf="displayState"[ngClass]="(state[i]=='run')?'bg-success text-white h5':(state[i]=='off')?'bg-danger text-white':'bg-dark'"> {{state[i]}}</td>
                     </tr>
 
                 </tbody>
             </table>
 
-            <button class="btn btn-lg btn-success px-4 py-2 mt-3" (click)="getData()">Run</button>
+            <button class="btn btn-lg btn-warning text-white px-4 py-2 mt-3" (click)="getData()">Get State</button>
 
         </div>
 

@@ -36,17 +36,22 @@ export class CitationComponent  {
           for (let j = 0; j < this.id.length; j++) {
             if (this.dataContainer[i].id === Number(this.id[j])) {
               this.state.push(this.dataContainer[i].state);
-              console.log(this.dataContainer[i].state);
+              // console.log(this.dataContainer[i].state);
+            
             }
+            // else if(this.dataContainer[i].id !== Number(this.id[j])){
+            //   // this.state=[];
+            //   // this.state.push('Not Found');
+            //   // this.state=this.message
+            //   console.log(this.state)
+            // }
             this.displayState = true;
           }
         }
-        console.log(this.state)
+        console.log(this.state);
         console.log(this.id);
       
         
       });
   }
-
-
 }
